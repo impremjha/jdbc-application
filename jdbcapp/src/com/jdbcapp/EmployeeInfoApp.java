@@ -24,8 +24,8 @@ public class EmployeeInfoApp extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTextField textField_3;
     private int input;
     private Connection connection ;
 
@@ -91,8 +91,8 @@ public class EmployeeInfoApp extends JFrame {
 					ResultSet resultSet = callableStatement.executeQuery();
 					
 					resultSet.next();
-					textField_1.setText(resultSet.getString("ename"));
-                    textField_2.setText(String.valueOf(resultSet.getInt("esal")));
+					textField_2.setText(resultSet.getString("ename"));
+                    textField_3.setText(String.valueOf(resultSet.getInt("esal")));
 					
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
@@ -117,30 +117,30 @@ public class EmployeeInfoApp extends JFrame {
 		lblEmpSalary.setBounds(20, 207, 135, 26);
 		contentPane.add(lblEmpSalary);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Arial", Font.PLAIN, 15));
-		textField_1.setEditable(false);
-		textField_1.setBounds(158, 160, 227, 33);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Arial", Font.PLAIN, 15));
+		textField_2.setEditable(false);
+		textField_2.setBounds(158, 160, 227, 33);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
 		
 		JButton btnClear = new JButton("Clear");
 		btnClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			textField.setText(null);
-			textField_1.setText(null);
 			textField_2.setText(null);
+			textField_3.setText(null);
 			}
 		});
 		btnClear.setFont(new Font("Arial", Font.BOLD, 18));
 		btnClear.setBounds(287, 97, 108, 33);
 		contentPane.add(btnClear);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Arial", Font.PLAIN, 15));
-		textField_2.setEditable(false);
-		textField_2.setColumns(10);
-		textField_2.setBounds(158, 207, 227, 33);
-		contentPane.add(textField_2);
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Arial", Font.PLAIN, 15));
+		textField_3.setEditable(false);
+		textField_3.setColumns(10);
+		textField_3.setBounds(158, 207, 227, 33);
+		contentPane.add(textField_3);
 	}
 }
